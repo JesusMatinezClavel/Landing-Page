@@ -10,7 +10,9 @@ export const CForm: React.FC<cFormProps> = ({ className }) => {
   return (
     <>
       <form className={combinedClasses} action="">
-        <input type="text" placeholder="input text"/>
+        <input type="text" placeholder="input your name"/>
+        <input type="email" placeholder="input your email"/>
+        <input type="text" placeholder="input your text"/>
       </form>
     </>
   );
