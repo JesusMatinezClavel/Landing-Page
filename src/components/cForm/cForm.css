@@ -1,0 +1,21 @@
+.form-design{
+    height: auto;
+    width: auto;
+
+    padding: .5em .5em;
+
+    background-color: aliceblue;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    margin: .5em;
+    border-radius: .5em;
+
+    padding: .4em .4em;
+
+}

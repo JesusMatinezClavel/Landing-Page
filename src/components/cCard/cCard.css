@@ -14,3 +14,37 @@
 
   background-color: #a795a5;
 }
+
+.card-sendEmail {
+  height: auto;
+  min-height: 2em;
+  width: auto;
+  min-width: 2em;
+  padding: 1em 1em;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgb(38, 84, 124);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .card-design {
+    width: 80%;
+  }
+}
+
+/* @media (max-width: 480px) {
+  .card-design {
+    width: 85%;
+    padding: 1em;
+  }
+} */
