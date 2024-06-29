@@ -1,10 +1,8 @@
 // REACT
-import { useState } from "react";
-
-import {  } from "./assets/default-ProfileImg.png";
 
 // STYLES
 import "./App.css";
+import profileImg from "./assets/default-ProfileImg.png";
 
 // COMPONENTS
 import { CButton } from "./components/cButton/cButton";
@@ -13,8 +11,10 @@ function App() {
 
   return (
     <>
-    <img src='./assets/default-ProfileImg.png' alt="Profile Image" />
-    <CButton />
+    <div className="landing-card">
+    <img src={profileImg} alt="Profile Image" />
+    <CButton title="Concertar cita" />
+    </div>
     </>
   );
 }

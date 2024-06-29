@@ -1,9 +1,13 @@
 import "./cButton.css";
 
-export const CButton = () => {
+interface CButtonProps {
+    title: string;
+}
+
+export const CButton: React.FC<CButtonProps> = ({title}) => {
     return(
         <>
-        <div className="button-design">button</div>
+        <div className="button-design">{title}</div>
         </>
     )
 };
