@@ -2,12 +2,13 @@ import "./cButton.css";
 
 interface CButtonProps {
     title: string;
+    onClick: React.MouseEventHandler<HTMLDivElement>
 }
 
-export const CButton: React.FC<CButtonProps> = ({title}) => {
+export const CButton: React.FC<CButtonProps> = ({title,onClick}) => {
     return(
         <>
-        <div className="button-design">{title}</div>
+        <div onClick={onClick} className="button-design">{title}</div>
         </>
     )
 };
