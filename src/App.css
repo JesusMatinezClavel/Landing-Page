@@ -11,23 +11,6 @@
   flex-direction: column;
 }
 
-.landing-card{
-  height: auto;
-  min-height: 15em;
-  width: auto;
-  min-width: 15em;
-  padding: 2em 2em;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-
-  border-radius: 1em;
-
-  background-color: #a795a5;
-}
-
 img{
   height: 15em;
   width: auto;
