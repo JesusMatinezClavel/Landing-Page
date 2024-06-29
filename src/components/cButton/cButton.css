@@ -1,0 +1,29 @@
+.button-design{
+    height: auto;
+    width: auto;
+
+    padding: .7em 1.4em;
+
+    border: .1em solid grey;
+    border-radius: .5em;
+
+    background-color: #424e5e;
+
+    box-shadow: .2em .2em .6em 0em lightgrey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        background-color: #4c5664;
+
+        box-shadow: .2em .2em .8em 0em lightgrey;
+    }
+    &:active{
+        background-color: #647a81;
+        
+        box-shadow: .1em .1em 1em 0em rgba(211, 211, 211, 0.418);
+        
+        transform: translateY(.2em);
+    }
+}
