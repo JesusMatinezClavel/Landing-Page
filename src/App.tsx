@@ -20,10 +20,9 @@ const App = () => {
 
   return (
     <>
-      <CCard>
+      <CCard className="">
         <img src={profileImg} alt="Profile Image" />
-        <CButton title="Concertar cita" onClick={showSendEmail} />
-        {/* <CButton title="Otra función" onClick={sendEmail} /> */}
+        <CButton className="" title="Concertar cita" disabled={false} onClick={showSendEmail} />
         <p>**texto legal**</p>
       </CCard>
     </>

@@ -39,3 +39,25 @@
         border-radius: 1em;
     }
 }
+
+.disabled{
+    height: auto;
+    width: 12.5em;
+
+    padding: .7em;
+    margin: .25em;
+
+    border: .1em solid grey;
+    border-radius: 1em;
+
+    background-color: #7c7c7c;
+
+    box-shadow: .2em .2em .6em 0em #817480;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.1em;
+    font-weight: 600;
+}
