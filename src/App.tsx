@@ -1,7 +1,9 @@
 // REACT
+import { useState } from "react";
+import { X } from "lucide-react";
+
 
 // STYLES
-import { useState } from "react";
 import "./App.css";
 import profileImg from "./assets/default-ProfileImg.png";
 
@@ -20,7 +22,6 @@ const App = () => {
     console.log(show);
     
   };
-
   return (
     <>
       <CCard className="">
@@ -32,6 +33,7 @@ const App = () => {
           onClick={showSendEmail}
         />
         <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
+          <X className="lucideIcon" onClick={showSendEmail}/>
           <CForm className=""/>
         </CCard>
         <p>**texto legal**</p>
