@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 
-
 // STYLES
 import "./App.css";
 import profileImg from "./assets/default-ProfileImg.png";
@@ -10,18 +9,34 @@ import profileImg from "./assets/default-ProfileImg.png";
 // COMPONENTS
 import { CButton } from "./components/cButton/cButton";
 import { CCard } from "./components/cCard/cCard";
-import { CForm } from "./components/cForm/cForm";
+import { CInput } from "./components/cForm/cInput";
 
 const App = () => {
   const [show, setShow] = useState({
     sendEmail: false,
   });
+  const [personalInfo, setPersonalInfo] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const showSendEmail = () => {
-    show.sendEmail ? setShow({ sendEmail: false }) : setShow({ sendEmail: true });
+    show.sendEmail
+      ? setShow({ sendEmail: false })
+      : setShow({ sendEmail: true });
     console.log(show);
+    console.log(personalInfo);
     
   };
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPersonalInfo((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <>
       <CCard className="">
@@ -33,8 +48,7 @@ const App = () => {
           onClick={showSendEmail}
         />
         <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
-          <X className="lucideIcon" onClick={showSendEmail}/>
-          <CForm className=""/>
+          <CInput className="" type='email' name='name' value='value'/>
         </CCard>
         <p>**texto legal**</p>
       </CCard>

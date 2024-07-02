@@ -20,7 +20,7 @@
   min-height: 2em;
   width: auto;
   min-width: 2em;
-  padding: 1em 1em;
+  /* padding: 1em 1em; */
 
   position: absolute;
   /* top: 23.5em; */
@@ -30,17 +30,20 @@
   align-items: center;
   flex-direction: column;
 
-  background-color: #a795a500;
-}
-
-.lucideIcon {
-  color: black;
-  margin-left: 95%;
+  background-color: #8d3082;
+  transition: 1s;
 }
 
 .hidden {
   display: none;
+  transition: 1s;
 }
+
+/* .lucideIcon {
+  color: black;
+  margin-left: 95%;
+} */
+
 
 @media (min-width: 600px) {
   .card-sendEmail {
