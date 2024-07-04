@@ -2,9 +2,13 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 
+
 // STYLES
 import "./App.css";
 import profileImg from "./assets/default-ProfileImg.png";
+
+// SERVICES
+import { sendEmailService, sendEmailProps } from "./services/apiServices";
 
 // COMPONENTS
 import { CButton } from "./components/cButton/cButton";
@@ -47,10 +51,23 @@ const App: React.FC = () => {
   //   }));
   // };
 
-  console.log(personalInfo);
-
   const ok = () => {
     console.log("no");
+  };
+
+  const sendEmail = async () => {
+    const data: sendEmailProps = {
+      service_id: "service_mbmx9pk",
+      template_id: "template_2mpjo6y",
+      user_id: "wemvTaWxjgk_PwNK7",
+      personalInfo,
+      accessToken: "PXcd5iiUOvCdSZH-wGrRh",
+    };
+    try {
+      await sendEmailService(data);
+    } catch (error) {
+      console.log("error sending:", error);
+    }
   };
 
   return (
@@ -64,7 +81,7 @@ const App: React.FC = () => {
           onClick={showSendEmail}
         />
         <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
-          <X className="xIcon" onClick={showSendEmail}/>
+          <X className="xIcon" onClick={showSendEmail} />
           <CInput
             type="text"
             name="name"
@@ -92,7 +109,12 @@ const App: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           />
-          <CButton title="concertar cita" className="" onClick={ok} disabled/>
+          <CButton
+            title="concertar cita"
+            className=""
+            onClick={sendEmail}
+            disabled={false}
+          />
         </CCard>
         <p>**texto legal**</p>
       </CCard>
