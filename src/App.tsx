@@ -64,6 +64,7 @@ const App: React.FC = () => {
           onClick={showSendEmail}
         />
         <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
+          <X className="xIcon" onClick={showSendEmail}/>
           <CInput
             type="text"
             name="name"

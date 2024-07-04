@@ -39,11 +39,9 @@
   transition: 1s;
 }
 
-/* .lucideIcon {
-  color: black;
-  margin-left: 95%;
-} */
-
+.xIcon{
+  margin-left: 10em;
+}
 
 @media (min-width: 600px) {
   .card-sendEmail {
