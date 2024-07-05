@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
 // STYLES
-import "./App.css";
-import profileImg from "./assets/photoLandingPage.jpg";
+import "./landingPage.css";
+import profileImg from "../../assets/photoLandingPage.jpg";
 
 // SERVICES
 import { sendEmailService, sendEmailProps } from "../../services/apiServices";
@@ -13,6 +13,7 @@ import { sendEmailService, sendEmailProps } from "../../services/apiServices";
 import { CButton } from "../../components/cButton/cButton";
 import { CCard } from "../../components/cCard/cCard";
 import { CInput } from "../../components/cForm/cInput";
+import { CalendlyComponent } from "../../components/calendly/calendly";
 
 export const LandingPage: React.FC = () => {
   const [show, setShow] = useState({
@@ -105,7 +106,7 @@ export const LandingPage: React.FC = () => {
           <CInput
             type="text"
             name="name"
-            placeholder="input name"
+            placeholder="input name *"
             className=""
             value={personalInfo.name || ""}
             onChange={handleInput}
@@ -114,7 +115,7 @@ export const LandingPage: React.FC = () => {
           <CInput
             type="email"
             name="email"
-            placeholder="input email"
+            placeholder="input email *"
             className=""
             value={personalInfo.email || ""}
             onChange={handleInput}
@@ -129,7 +130,8 @@ export const LandingPage: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           />
-          <CInput
+          <CalendlyComponent url="https://calendly.com/jmcvalles/nombre"/>
+          {/* <CInput
             type="datetime-local"
             name="date"
             placeholder="input date"
@@ -137,7 +139,7 @@ export const LandingPage: React.FC = () => {
             value={personalInfo.date || ""}
             onChange={handleInput}
             onBlur={ok}
-          />
+          /> */}
           <CButton
             title="concertar cita"
             className=""
