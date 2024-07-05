@@ -4,19 +4,25 @@
 
     margin: .5em;
 
-    background-color: .5em;
+    background-color: rgba(150, 150, 150, 0);
 
-    background-color: rgba(240, 248, 255, 0);
-
+    border-radius: .5em;
     border: 0em solid black;
     border-bottom: .1em solid black;
-
-    color: rgb(58, 58, 58);
+    color:black;
     &:focus{
         outline: none;
+    }
+    &::placeholder{
+        color: black;
     }
 }
 
 .input-textarea{
     height: 5em;
+}
+
+.input-date{
+    color:black;
+    color:black;
 }

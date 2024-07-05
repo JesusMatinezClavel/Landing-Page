@@ -13,6 +13,7 @@
   border-radius: 1em;
 
   background-color: #a795a5;
+  /* background: url(../../assets/wallpaperLandingPage.jpg) fixed center center no-repeat; */
 }
 
 .card-sendEmail {
@@ -23,8 +24,7 @@
 
   padding: 1em 1em;
 
-
-  background-color: antiquewhite;
+  background-color: #7a959e;
 
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@
   transition: 1s;
 }
 
-.xIcon{
+.xIcon {
   margin-left: 20em;
 
   color: darkgrey;
