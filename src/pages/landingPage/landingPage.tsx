@@ -130,7 +130,7 @@ export const LandingPage: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           />
-          <CalendlyComponent url="https://calendly.com/jmcvalles/nombre"/>
+          <CalendlyComponent url="https://calendly.com/tradingchiqui/mentoria"/>
           {/* <CInput
             type="datetime-local"
             name="date"
