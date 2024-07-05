@@ -1,11 +1,10 @@
 // REACT
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
-
 
 // STYLES
 import "./App.css";
-import profileImg from "./assets/default-ProfileImg.png";
+import profileImg from "./assets/photoLandingPage.jpg";
 
 // SERVICES
 import { sendEmailService, sendEmailProps } from "./services/apiServices";
@@ -23,14 +22,28 @@ const App: React.FC = () => {
     name: "",
     email: "",
     message: "",
+    date: "",
   });
+  const [textInfo, setTextInfo] = useState("");
+
+  useEffect(() => {
+    document.title = "Concertar cita";
+  }, []);
 
   const showSendEmail = () => {
     show.sendEmail
-      ? setShow({ sendEmail: false })
-      : setShow({ sendEmail: true });
-    console.log(show);
-    console.log(personalInfo);
+      ? (setShow({ sendEmail: false }),
+        setPersonalInfo({
+          name: "",
+          email: "",
+          message: "",
+        }))
+      : (setShow({ sendEmail: true }),
+        setPersonalInfo({
+          name: "",
+          email: "",
+          message: "",
+        }));
   };
 
   const handleInput = (
@@ -57,14 +70,27 @@ const App: React.FC = () => {
 
   const sendEmail = async () => {
     const data: sendEmailProps = {
-      service_id: "service_mbmx9pk",
-      template_id: "template_2mpjo6y",
-      user_id: "wemvTaWxjgk_PwNK7",
+      service_id: "service_pssn0bq",
+      template_id: "template_xgr8wbn",
+      user_id: "dpVhmgq1jes-2O3ML",
       personalInfo,
-      accessToken: "PXcd5iiUOvCdSZH-wGrRh",
+      accessToken: "YOND6MDAMWbNzbg0vVVRA",
     };
     try {
-      await sendEmailService(data);
+      const response = await sendEmailService(data);
+      setTextInfo(response!);
+      setTimeout(() => {
+        setTextInfo("");
+      }, 500);
+      setPersonalInfo({
+        name: "",
+        email: "",
+        message: "",
+        date: "",
+      });
+      setShow({
+        sendEmail: false,
+      });
     } catch (error) {
       console.log("error sending:", error);
     }
@@ -73,7 +99,9 @@ const App: React.FC = () => {
   return (
     <>
       <CCard className="">
+        <p>{textInfo}</p>
         <img src={profileImg} alt="Profile Image" />
+        <p>**texto presentacion**</p>
         <CButton
           className=""
           title="Concertar cita"
@@ -104,8 +132,17 @@ const App: React.FC = () => {
             type="textarea"
             name="message"
             placeholder="input message"
-            className=""
+            className="input-textarea"
             value={personalInfo.message || ""}
+            onChange={handleInput}
+            onBlur={ok}
+          />
+          <CInput
+            type="datetime-local"
+            name="date"
+            placeholder="input date"
+            className="input-date"
+            value={personalInfo.date || ""}
             onChange={handleInput}
             onBlur={ok}
           />
@@ -113,7 +150,13 @@ const App: React.FC = () => {
             title="concertar cita"
             className=""
             onClick={sendEmail}
-            disabled={false}
+            disabled={
+              personalInfo.name !== "" &&
+              personalInfo.email !== "" &&
+              personalInfo.date !== ""
+                ? false
+                : true
+            }
           />
         </CCard>
         <p>**texto legal**</p>

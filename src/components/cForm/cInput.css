@@ -1,3 +1,22 @@
 .input-design {
+    height: 2em;
+    width: 25em;
 
+    margin: .5em;
+
+    background-color: .5em;
+
+    background-color: rgba(240, 248, 255, 0);
+
+    border: 0em solid black;
+    border-bottom: .1em solid black;
+
+    color: rgb(58, 58, 58);
+    &:focus{
+        outline: none;
+    }
+}
+
+.input-textarea{
+    height: 5em;
 }

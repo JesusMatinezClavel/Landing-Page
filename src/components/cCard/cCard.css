@@ -17,21 +17,21 @@
 
 .card-sendEmail {
   height: auto;
-  min-height: 2em;
+  min-height: auto;
+  min-width: auto;
   width: auto;
-  min-width: 2em;
-  /* padding: 1em 1em; */
 
-  position: absolute;
-  /* top: 23.5em; */
+  padding: 1em 1em;
+
+
+  background-color: antiquewhite;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
-  background-color: #8d3082;
-  transition: 1s;
+  position: absolute;
 }
 
 .hidden {
@@ -40,20 +40,7 @@
 }
 
 .xIcon{
-  margin-left: 10em;
-}
+  margin-left: 20em;
 
-@media (min-width: 600px) {
-  .card-sendEmail {
-    width: 70vw;
-  }
-  .lucideIcon {
-    margin-left: 100%;
-  }
-}
-
-@media (min-width: 1080px) {
-  .card-sendEmail {
-    width: 70vw;
-  }
+  color: darkgrey;
 }
