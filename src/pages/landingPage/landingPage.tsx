@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
+import 'dotenv/config'
+
 // STYLES
 import "./landingPage.css";
 import profileImg from "../../assets/photoLandingPage.jpg";
@@ -61,13 +63,20 @@ export const LandingPage: React.FC = () => {
     console.log("no");
   };
 
+  const calendlyURL = process.env.CALENDLY_URL!
+
   const sendEmail = async () => {
+    const service_id = process.env.SERVICE!
+    const template_id = process.env.TEMPLATE!
+    const user_id = process.env.USER!
+    const accessToken = process.env.ACCESS!
+    
     const data: sendEmailProps = {
-      service_id: "service_pssn0bq",
-      template_id: "template_xgr8wbn",
-      user_id: "dpVhmgq1jes-2O3ML",
+      service_id,
+      template_id,
+      user_id,
       personalInfo,
-      accessToken: "YOND6MDAMWbNzbg0vVVRA",
+      accessToken,
     };
     try {
       const response = await sendEmailService(data);
@@ -130,7 +139,7 @@ export const LandingPage: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           />
-          <CalendlyComponent url="https://calendly.com/tradingchiqui/mentoria"/>
+          <CalendlyComponent url={calendlyURL}/>
           {/* <CInput
             type="datetime-local"
             name="date"
