@@ -19,13 +19,13 @@ export const LandingPage: React.FC = () => {
   const [show, setShow] = useState({
     sendEmail: false,
   });
-  const [personalInfo, setPersonalInfo] = useState({
-    name: "",
-    email: "",
-    message: "",
-    date: "",
-  });
-  const [textInfo,] = useState("");
+  // const [personalInfo, setPersonalInfo] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  //   date: "",
+  // });
+  const [textInfo] = useState("");
 
   useEffect(() => {
     document.title = "Concertar cita";
@@ -33,20 +33,8 @@ export const LandingPage: React.FC = () => {
 
   const showSendEmail = () => {
     show.sendEmail
-      ? (setShow({ sendEmail: false }),
-        setPersonalInfo({
-          name: "",
-          email: "",
-          message: "",
-          date: "",
-        }))
-      : (setShow({ sendEmail: true }),
-        setPersonalInfo({
-          name: "",
-          email: "",
-          message: "",
-          date: "",
-        }));
+      ? setShow({ sendEmail: false })
+      : setShow({ sendEmail: true });
   };
 
   // const handleInput = (
