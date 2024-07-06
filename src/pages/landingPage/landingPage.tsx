@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-import 'dotenv/config'
+// import 'dotenv/config'
 
 // STYLES
 import "./landingPage.css";
@@ -63,14 +63,15 @@ export const LandingPage: React.FC = () => {
     console.log("no");
   };
 
-  const calendlyURL = process.env.CALENDLY_URL!
+  const calendlyURL = "https://calendly.com/tradingchiqui/mentoria"
 
   const sendEmail = async () => {
-    const service_id = process.env.SERVICE!
-    const template_id = process.env.TEMPLATE!
-    const user_id = process.env.USER!
-    const accessToken = process.env.ACCESS!
-    
+
+    const service_id = import.meta.env.VITE_SERVICE
+    const template_id = import.meta.env.VITE_TEMPLATE
+    const user_id = import.meta.env.VITE_USER
+    const accessToken = import.meta.env.VITE_ACCESS
+
     const data: sendEmailProps = {
       service_id,
       template_id,
@@ -112,7 +113,7 @@ export const LandingPage: React.FC = () => {
         />
         <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
           <X className="xIcon" onClick={showSendEmail} />
-          <CInput
+          {/* <CInput
             type="text"
             name="name"
             placeholder="input name *"
@@ -138,7 +139,7 @@ export const LandingPage: React.FC = () => {
             value={personalInfo.message || ""}
             onChange={handleInput}
             onBlur={ok}
-          />
+          /> */}
           <CalendlyComponent url={calendlyURL}/>
           {/* <CInput
             type="datetime-local"
@@ -149,7 +150,7 @@ export const LandingPage: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           /> */}
-          <CButton
+          {/* <CButton
             title="concertar cita"
             className=""
             onClick={sendEmail}
@@ -160,7 +161,7 @@ export const LandingPage: React.FC = () => {
                 ? false
                 : true
             }
-          />
+          /> */}
         </CCard>
         <p>**texto legal**</p>
       </CCard>
