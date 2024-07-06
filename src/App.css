@@ -16,6 +16,9 @@ img{
   width: auto;
 
   border-radius: 10em;
+  border: .1em solid black;
+
+  box-shadow: .5em .3em 1em .2em rgba(0, 0, 0, 0.603);
 
   margin: 1em;
 }

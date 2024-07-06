@@ -49,52 +49,49 @@ export const LandingPage: React.FC = () => {
         }));
   };
 
-  const handleInput = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setPersonalInfo((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-  const ok = () => {
-    console.log("no");
-  };
+  // const handleInput = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   setPersonalInfo((prevState) => ({
+  //     ...prevState,
+  //     [e.target.name]: e.target.value,
+  //   }));
+  // };
 
   const calendlyURL = "https://calendly.com/tradingchiqui/mentoria";
 
-  const sendEmail = async () => {
-    const service_id = import.meta.env.VITE_SERVICE;
-    const template_id = import.meta.env.VITE_TEMPLATE;
-    const user_id = import.meta.env.VITE_USER;
-    const accessToken = import.meta.env.VITE_ACCESS;
+  // const sendEmail = async () => {
+  //   const service_id = import.meta.env.VITE_SERVICE;
+  //   const template_id = import.meta.env.VITE_TEMPLATE;
+  //   const user_id = import.meta.env.VITE_USER;
+  //   const accessToken = import.meta.env.VITE_ACCESS;
 
-    const data: sendEmailProps = {
-      service_id,
-      template_id,
-      user_id,
-      personalInfo,
-      accessToken,
-    };
-    try {
-      const response = await sendEmailService(data);
-      setTextInfo(response!);
-      setTimeout(() => {
-        setTextInfo("");
-      }, 500);
-      setPersonalInfo({
-        name: "",
-        email: "",
-        message: "",
-        date: "",
-      });
-      setShow({
-        sendEmail: false,
-      });
-    } catch (error) {
-      console.log("error sending:", error);
-    }
-  };
+  //   const data: sendEmailProps = {
+  //     service_id,
+  //     template_id,
+  //     user_id,
+  //     personalInfo,
+  //     accessToken,
+  //   };
+  //   try {
+  //     const response = await sendEmailService(data);
+  //     setTextInfo(response!);
+  //     setTimeout(() => {
+  //       setTextInfo("");
+  //     }, 500);
+  //     setPersonalInfo({
+  //       name: "",
+  //       email: "",
+  //       message: "",
+  //       date: "",
+  //     });
+  //     setShow({
+  //       sendEmail: false,
+  //     });
+  //   } catch (error) {
+  //     console.log("error sending:", error);
+  //   }
+  // };
 
   return (
     <>

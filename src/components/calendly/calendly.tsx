@@ -1,6 +1,6 @@
 import "./calendly.css";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { InlineWidget } from "react-calendly";
 
 interface CalendlyComponentProps {
@@ -15,11 +15,10 @@ export const CalendlyComponent: React.FC<CalendlyComponentProps> = ({
   prefill,
 }) => {
 
-  const calendlyRef = useRef(InlineWidget)
   return (
     <>
-      <div className="calendly-inline-widget">
-        <InlineWidget styles={{border:'2px solid darkgrey', minWidth: '320px', height: '630px'}} url={url} pageSettings={pageSettings} prefill={prefill} />
+      <div>
+        <InlineWidget styles={{border:'5px solid darkgrey', minWidth: '320px', height: '630px'}} url={url} pageSettings={pageSettings} prefill={prefill} />
       </div>
     </>
   );

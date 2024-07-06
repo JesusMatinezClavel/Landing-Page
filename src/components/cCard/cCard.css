@@ -11,20 +11,20 @@
   flex-direction: column;
 
   border-radius: 1em;
+  border: .1em solid black;
 
-  background-color: #a795a5f8;
+  background-color: #fca5f2d0;
   /* background: url(../../assets/wallpaperCardSendEmail.png) fixed center center no-repeat; */
 }
 
 .card-sendEmail {
   height: auto;
-  min-height: auto;
-  min-width: auto;
   width: auto;
 
-  padding: 1em 1em;
+  padding: 0em 0em;
 
   background-color: #7a959e00;
+  border: none;
 
   display: flex;
   justify-content: center;
