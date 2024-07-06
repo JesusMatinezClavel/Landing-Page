@@ -7,12 +7,12 @@ import "./landingPage.css";
 import profileImg from "../../assets/photoLandingPage.jpg";
 
 // SERVICES
-import { sendEmailService, sendEmailProps } from "../../services/apiServices";
+// import { sendEmailService, sendEmailProps } from "../../services/apiServices";
 
 // COMPONENTS
 import { CButton } from "../../components/cButton/cButton";
 import { CCard } from "../../components/cCard/cCard";
-import { CInput } from "../../components/cForm/cInput";
+// import { CInput } from "../../components/cForm/cInput";
 import { CalendlyComponent } from "../../components/calendly/calendly";
 
 export const LandingPage: React.FC = () => {
@@ -25,7 +25,7 @@ export const LandingPage: React.FC = () => {
     message: "",
     date: "",
   });
-  const [textInfo, setTextInfo] = useState("");
+  const [textInfo,] = useState("");
 
   useEffect(() => {
     document.title = "Concertar cita";
