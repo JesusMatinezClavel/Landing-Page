@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-// import 'dotenv/config'
-
 // STYLES
 import "./landingPage.css";
 import profileImg from "../../assets/photoLandingPage.jpg";
@@ -63,14 +61,13 @@ export const LandingPage: React.FC = () => {
     console.log("no");
   };
 
-  const calendlyURL = "https://calendly.com/tradingchiqui/mentoria"
+  const calendlyURL = "https://calendly.com/tradingchiqui/mentoria";
 
   const sendEmail = async () => {
-
-    const service_id = import.meta.env.VITE_SERVICE
-    const template_id = import.meta.env.VITE_TEMPLATE
-    const user_id = import.meta.env.VITE_USER
-    const accessToken = import.meta.env.VITE_ACCESS
+    const service_id = import.meta.env.VITE_SERVICE;
+    const template_id = import.meta.env.VITE_TEMPLATE;
+    const user_id = import.meta.env.VITE_USER;
+    const accessToken = import.meta.env.VITE_ACCESS;
 
     const data: sendEmailProps = {
       service_id,
@@ -101,19 +98,20 @@ export const LandingPage: React.FC = () => {
 
   return (
     <>
-      <CCard className="">
-        <p>{textInfo}</p>
-        <img src={profileImg} alt="Profile Image" />
-        <p>**texto presentacion**</p>
-        <CButton
-          className=""
-          title="Concertar cita"
-          disabled={false}
-          onClick={showSendEmail}
-        />
-        <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
-          <X className="xIcon" onClick={showSendEmail} />
-          {/* <CInput
+      <div className="landingPage-design">
+        <CCard className="">
+          <p>{textInfo}</p>
+          <img src={profileImg} alt="Profile Image" />
+          <p>**texto presentacion**</p>
+          <CButton
+            className=""
+            title="Concertar cita"
+            disabled={false}
+            onClick={showSendEmail}
+          />
+          <CCard className={show.sendEmail ? "card-sendEmail" : "hidden"}>
+            <X className="xIcon" onClick={showSendEmail} />
+            {/* <CInput
             type="text"
             name="name"
             placeholder="input name *"
@@ -140,8 +138,8 @@ export const LandingPage: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           /> */}
-          <CalendlyComponent url={calendlyURL}/>
-          {/* <CInput
+            <CalendlyComponent url={calendlyURL} />
+            {/* <CInput
             type="datetime-local"
             name="date"
             placeholder="input date"
@@ -150,7 +148,7 @@ export const LandingPage: React.FC = () => {
             onChange={handleInput}
             onBlur={ok}
           /> */}
-          {/* <CButton
+            {/* <CButton
             title="concertar cita"
             className=""
             onClick={sendEmail}
@@ -162,9 +160,10 @@ export const LandingPage: React.FC = () => {
                 : true
             }
           /> */}
+          </CCard>
+          <p>**texto legal**</p>
         </CCard>
-        <p>**texto legal**</p>
-      </CCard>
+      </div>
     </>
   );
 };

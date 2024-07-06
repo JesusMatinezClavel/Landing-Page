@@ -19,7 +19,7 @@ export const CalendlyComponent: React.FC<CalendlyComponentProps> = ({
   return (
     <>
       <div className="calendly-inline-widget">
-        <InlineWidget styles={{ minWidth: '320px', height: '630px', backgroundColor: '#0f0f0f0f' }} url={url} pageSettings={pageSettings} prefill={prefill} />
+        <InlineWidget styles={{border:'2px solid darkgrey', minWidth: '320px', height: '630px'}} url={url} pageSettings={pageSettings} prefill={prefill} />
       </div>
     </>
   );
